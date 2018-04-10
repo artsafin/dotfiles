@@ -1,0 +1,21 @@
+[user]
+	name = Artur Safin
+	email = treilor@gmail.com
+
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	hist = log --pretty=format:\"%h %ad | %an | %s%d\" --graph --date=short
+	ru = remote update
+	mnoff = merge --no-ff
+	dh = checkout --detach HEAD
+	merged = branch -a --merged
+	nomerged = branch -a --no-merged
+	poh = push origin HEAD
+	logall = log --decorate --all --graph --stat --date=iso
+	logone = log --oneline --no-merges
+
+[core]
+	autocrlf = input
+	askpass = /usr/bin/ksshaskpass
