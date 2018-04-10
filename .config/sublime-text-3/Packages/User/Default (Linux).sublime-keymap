@@ -1,0 +1,4 @@
+[
+	{ "keys": ["f1"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+e"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }
+]
