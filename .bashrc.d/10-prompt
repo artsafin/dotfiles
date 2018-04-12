@@ -1,12 +1,16 @@
 #!/bin/bash
 
 BLACKFG="\[$(tput setaf 0)\]"
+RESET="\[$(tput sgr0)\]"
+
 WHITEFG="\[$(tput setaf 15)\]"
 GREENBG="\[$(tput setab 42)\]"
 GRAYBG="\[$(tput setab 242)\]"
 REDBG="\[$(tput setab 196)\]"
-RESET="\[$(tput sgr0)\]"
 
-source /usr/share/git/completion/git-prompt.sh
-
-PS1="${BLACKFG}${GREENBG} \A ${WHITEFG}${GRAYBG} \w ${RESET}\$(__git_ps1 \" %s\") \$ "
+if [[ -f /usr/share/git/completion/git-prompt.sh ]]; then
+	source /usr/share/git/completion/git-prompt.sh
+	PS1="${BLACKFG}${GREENBG} \A ${WHITEFG}${GRAYBG} \w ${RESET}\$(__git_ps1 \" %s\") \$ "
+else
+	PS1="${BLACKFG}${GREENBG} \A ${WHITEFG}${GRAYBG} \w ${RESET} \$ "
+fi

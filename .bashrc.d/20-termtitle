@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function settitle () {
+        export PWD_BASENAME=$(basename "$PWD")
+        export TERM_TITLE="${PWD_BASENAME}$(__git_ps1)"
+    echo -ne "\033]0;${TERM_TITLE}\007"
+}
+
+trap 'settitle' DEBUG
