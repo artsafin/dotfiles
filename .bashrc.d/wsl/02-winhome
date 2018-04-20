@@ -1,0 +1,3 @@
+#!/bin/bash
+
+export WINHOME=$(cmd.exe /c "echo %USERPROFILE%" | sed -e 's|^\(.\):|/mnt/\L\1|' -e 's|\\|/|g' -e 's|\r||')
